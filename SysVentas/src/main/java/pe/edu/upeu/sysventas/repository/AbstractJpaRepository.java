@@ -53,6 +53,7 @@ public abstract class AbstractJpaRepository<T,ID>
 
     @Override
     public boolean existsById(ID id) {
+
         return data.stream().anyMatch(entity->getId(entity).equals(id));
     }
 }
