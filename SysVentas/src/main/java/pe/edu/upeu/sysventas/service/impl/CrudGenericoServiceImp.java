@@ -30,7 +30,8 @@ public abstract class CrudGenericoServiceImp <T, ID> implements ICrudGenericoser
 
     @Override
     public T findById(ID id) {
-        return getRepo().findById(id).orElseThrow(()->new ModelNotFoundException("Id no existe :"+id));
+        return getRepo().findById(id).orElseThrow(
+                ()->new ModelNotFoundException("Id no existe :"+id));
     }
 
     @Override
