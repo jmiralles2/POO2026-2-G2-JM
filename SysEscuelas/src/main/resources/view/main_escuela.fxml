@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="miContenedor" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysescuelas.controller.EscuelaController">
+   <children>
+      <VBox spacing="10.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <Label text="Padrón de Escuelas Públicas" textFill="#1f3397">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Filtrar por nivel:" />
+                  <ComboBox fx:id="cbxFiltroNivel" prefWidth="200.0" />
+                  <Label text="Buscar (nombre o clave):" />
+                  <TextField fx:id="txtFiltroDato" prefWidth="220.0" />
+                  <Button mnemonicParsing="false" onAction="#limpiarFiltros" styleClass="btn, btn-warning" text="Limpiar filtros" />
+               </children>
+            </HBox>
+            <HBox spacing="15.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <GridPane hgap="8.0" minWidth="360.0" vgap="8.0">
+                     <columnConstraints>
+                        <ColumnConstraints minWidth="90.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="250.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label maxWidth="1.7976931348623157E308" text="Formulario de Registro" GridPane.columnSpan="2147483647">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text="Nombre plantel" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtNombre" promptText="Nombre del plantel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Nivel educativo" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="cbxNivel" maxWidth="1.7976931348623157E308" promptText="Seleccione un nivel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Clave CT" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtClave" promptText="Ej. 09DPR0123A" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Dirección" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtDireccion" promptText="Calle, número y colonia" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="Matrícula total" GridPane.rowIndex="5" />
+                        <TextField fx:id="txtMatricula" promptText="Total de alumnos" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <HBox spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <children>
+                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#validarFormulario" styleClass="btn, btn-primary" text="Guardar" HBox.hgrow="ALWAYS" />
+                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearForm" styleClass="btn, btn-danger" text="Cancelar" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <Label fx:id="lbnMsg" maxWidth="1.7976931348623157E308" wrapText="true" GridPane.columnSpan="2147483647" GridPane.rowIndex="7" />
+                     </children>
+                  </GridPane>
+                  <TableView fx:id="tableView" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <Label fx:id="lblResumen" text="">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

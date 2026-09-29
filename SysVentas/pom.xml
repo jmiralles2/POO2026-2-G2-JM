@@ -60,6 +60,7 @@
             <version>1.18.46</version>
             <scope>compile</scope>
         </dependency>
+
         <!-- Source: https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
         <dependency>
             <groupId>org.hibernate.validator</groupId>
@@ -78,6 +79,7 @@
             <artifactId>expressly</artifactId>
             <version>5.0.0</version>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -89,6 +91,16 @@
                 <configuration>
                     <source>21</source>
                     <target>21</target>
+
+                    <annotationProcessorPaths>
+                        <!-- Lombok Annotation Processor -->
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.46</version>
+                        </path>
+                    </annotationProcessorPaths>
+
                 </configuration>
             </plugin>
             <plugin>

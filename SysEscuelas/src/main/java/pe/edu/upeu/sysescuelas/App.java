@@ -1,0 +1,9 @@
+package pe.edu.upeu.sysescuelas;
+
+import javafx.application.Application;
+
+public class App {
+    public static void main(String[] args) {
+        Application.launch(SysEscuelas.class, args);
+    }
+}
